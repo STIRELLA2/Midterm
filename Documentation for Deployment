@@ -1,0 +1,68 @@
+I. Be a flask end point accessible to the entire internet hosted on an AWS machine.
+
+Steps 
+
+1. Created github repository 
+    https://github.com/slpmssg12/grp8
+
+included repository file for resources needed:
+https://github.com/slpmssg12/grp8/blob/master/RESOURCES
+
+provided documentation for deployment in a README
+https://github.com/slpmssg12/grp8/blob/master/README.md
+
+wrote import flask / website html python script:
+https://github.com/slpmssg12/grp8/blob/master/flask_import.py
+
+
+2. Created AWS instance
+
+i-049e47ca4b94b31c8:8080/grp8
+
+added inbound security rule to allow all traffic
+
+II. Accept cURL calls on one (or more) routes and successfully return something (ideally   a 200 or 4XX status but never a 500) when called
+
+Steps 
+
+1. Created PyCharm virtual environment
+
+2. Wrote get curls call to talk up to AWS server
+
+III. Accept in a request with a payload including a string and a requested NLP service. Your project should be capable of returning 2 services for each member of your group.
+
+
+1. Paste GET and POST requests into Pycharm and hit enter (below)
+
+2. Click the now active url link to view the strings on the web
+
+GET
+import requests
+url = "http://3.145.3.199:8080/grp8"
+payload={}
+headers = {}
+response = requests.request("GET", url, headers=headers, data=payload)
+print(response.text)
+
+
+POST
+#NLP Service 1: to lower case:
+url = "http://3.145.3.199:8080/1"
+string=("LOWERCASE: I don't remember the last three numbers; but, the first 2 were 40 five!")
+response = requests.post(url, data=string)
+print(response.text)
+
+POST
+#NLPService 2: remove numbers:
+url = "http://3.145.3.199:8080/2"
+string=("REMOVE NBRS: I don't remember the last three numbers; but, the first 2 were 40 five!")
+response = requests.post(url, data=string)
+print(response.text)
+
+POST
+#NLP Service 3: extract the stream of tokens with the help of regular expressions
+url = "http://3.145.3.199:8080/3"
+string=("EXTRACT TOKENS: I don't remember the last three numbers; but, the first 2 were 40 five!")
+response = requests.post(url, data=string)
+print(response.text)
+
