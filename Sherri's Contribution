@@ -1,0 +1,17 @@
+1. Created github repository (using Spencer's for submission)
+
+2. Created repository RESOURCE file 
+
+3. Created repository Documentation for Deployment file
+
+4. Wrote import flask / website html python script:
+
+5. Created AWS / Flask instance
+
+6. Created PyCharm virtual environment
+
+7. Wrote GET curl call to talk up to AWS server
+
+8. Wrote POST curl calls - to lower case, remove numbers, tokenize string -to talk up to AWS server
+
+9. Tested Curl calls in pycharm
