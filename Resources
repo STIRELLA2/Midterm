@@ -1,0 +1,6 @@
+install git
+install flask
+install re
+install requests
+install json
+install nltk
